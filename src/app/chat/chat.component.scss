@@ -1,0 +1,21 @@
+@import '../../styles/full-bk.scss';
+
+.chat-page {
+  @include full-bk('/assets/chat-bk.svg');
+}
+
+.chat-box {
+  background-color: white;
+  border-radius: 10px;
+  margin: 150px;
+  display: flex;
+  border: 1px solid;
+  border-color: #979797;
+}
+
+.chat-toolbar {
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

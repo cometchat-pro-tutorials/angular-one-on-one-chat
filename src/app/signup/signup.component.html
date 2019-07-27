@@ -1,1 +1,22 @@
-<p>signup works!</p>
+<div class="login-page">
+    <div class="login-box">
+      <img src="assets/chat-illustration-2.svg" />
+      <div>
+        <h2>Create an Account</h2>
+        <form ngSubmit=login()>
+          <mat-form-field>
+            <input matInput placeholder="Email" type="email" />
+            <mat-error *ngIf="false">
+                Please enter a valid email address
+              </mat-error>
+          </mat-form-field>
+          <button mat-raised-button color="primary">SIGN UP</button>
+        </form>
+        <h4>
+          <span>Do you have an account?</span>
+          <a routerLink="/login">Sign in</a>
+        </h4>
+      </div>
+    </div>
+  </div>
+

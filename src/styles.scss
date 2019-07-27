@@ -1,9 +1,20 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
 @import 'styles/full-bk.scss';
 
 html,
 body {
   height: 100%;
   margin: 0
+}
+
+.login-box {
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  border: 1px solid;
+  border-color: #979797;
+  padding: 40px;
 }
 
 .login-page {

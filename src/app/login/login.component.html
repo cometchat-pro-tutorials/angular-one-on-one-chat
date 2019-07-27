@@ -1,5 +1,21 @@
 <div class="login-page">
-  <div>
-    Login form
+  <div class="login-box">
+    <div>
+      <h2>Welcome Back</h2>
+      <form (ngSubmit)=login()>
+        <mat-form-field>
+          <input matInput placeholder="Email" type="email" />
+          <mat-error *ngIf="false">
+              Please enter a valid email address
+            </mat-error>
+        </mat-form-field>
+        <button mat-raised-button color="primary">LOG IN</button>
+      </form>
+      <h4>
+        <span>Don't have an account?</span>
+        <a routerLink="/signup">Sign up</a>
+      </h4>
+    </div>
+    <img src="assets/chat-illustration-1.svg" />
   </div>
 </div>
