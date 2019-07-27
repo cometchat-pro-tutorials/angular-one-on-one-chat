@@ -1,27 +1,37 @@
-# Angular1On1Chat
+# Angular One on One Chat example
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.2.
+This example shows how to build an anonymous one on one chat with Angular:
 
-## Development server
+![Login](/screenshots/Login.png?raw=true)
+![Chat](/screenshots/Chat.png?raw=true)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+![Login](/screenshots/Login.png?raw=true)
+![Chat](/screenshots/Chat.png?raw=true)
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Jump straight into the code or read the accompanying step-by-step guide here on our blog.
 
-## Build
+## Technology
+This demo uses:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+* Angular
+* TypeScript
+* CometChat JavaScript SDK
 
-## Running unit tests
+## Running the demo locally
+* Download the repository [here](https://github.com/cometchat-pro-samples/Angular-group-chat.git) or by running `git clone https://github.com/cometchat-pro-samples/Angular-group-chat.git`
+* Install all dependencies by running `npm install` in the project folder
+* Go to `src/environments/environment.ts` file and fill in a valid api key (authOnly scope is enough) and application key
+* Start the application by running `npm start` in the aplication folder
+* Go to http://localhost:4200
+* By default it uses the 'supergroup' that is already created in the ComeChat account. If you want to use a different one go to `src/environments/environment.ts` and change the value of the groupId property.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Useful links 
 
-## Running end-to-end tests
+* [📚Tutorial showing how we built this sample](www.google.com)
+* [ℹ️CometChat homepage](https://www.cometchat.com/pro/)
+* [ℹ️CometChat Javascript documentation](https://developer.cometchat.com/docs/web-quick-start)
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## Other examples
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+* [Complete app](https://github.com/cometchat-pro-samples/Angular-group-chat.git)
