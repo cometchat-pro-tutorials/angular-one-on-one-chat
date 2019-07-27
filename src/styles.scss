@@ -1,0 +1,11 @@
+@import 'styles/full-bk.scss';
+
+html,
+body {
+  height: 100%;
+  margin: 0
+}
+
+.login-page {
+  @include full-bk('/assets/login-bk.svg');
+}
