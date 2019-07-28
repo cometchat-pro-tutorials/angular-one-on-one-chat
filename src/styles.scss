@@ -1,22 +1,41 @@
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import 'styles/comet-chat-theme.scss';
 
 @import 'styles/full-bk.scss';
+@import 'styles/variables.scss';
+
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface|Roboto&display=swap');
 
 html,
 body {
   height: 100%;
-  margin: 0
 }
 
-.login-box {
-  background-color: white;
-  border-radius: 10px;
-  display: flex;
-  border: 1px solid;
-  border-color: #979797;
-  padding: 40px;
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+  font-family: AbrilFatface-Regular;
+  font-size: 26px;
+  color: $font-color;
+  letter-spacing: 0;
 }
 
 .login-page {
   @include full-bk('/assets/login-bk.svg');
+
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-box {
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: 0 2px 38px 0 rgba(45, 49, 63, 0.4);
+  display: flex;
+  border: 1px solid $border-color;
+  padding: 40px;
 }

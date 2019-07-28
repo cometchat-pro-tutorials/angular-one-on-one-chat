@@ -1,1 +1,15 @@
-<p>contacts-list works!</p>
+<div class="main">
+  <div class="contacts-title">Contacts</div>
+  <ul>
+    <li *ngFor="let contact of contacts">
+      <div class="image-container">
+        <img [src]="contact.img" />
+        <span class="circle"></span>
+      </div>
+      <div class="contacts-info">
+        <span class="status-title">{{ contact.name }}</span>
+        <span class="status-text">{{ contact.status }}</span>
+      </div>
+    </li>
+  </ul>
+</div>

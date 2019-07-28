@@ -1,21 +1,44 @@
 @import '../../styles/full-bk.scss';
 
-.chat-page {
-  @include full-bk('/assets/chat-bk.svg');
+.logo {
+  display: flex;
+  align-items: center;
 }
 
-.chat-box {
-  background-color: white;
-  border-radius: 10px;
-  margin: 150px;
-  display: flex;
-  border: 1px solid;
-  border-color: #979797;
+span {
+  margin-left: 10px;
+  font-family: AbrilFatface-Regular;
+  font-size: 22px;
+  color: #2d313f;
+  letter-spacing: 0;
 }
 
 .chat-toolbar {
-  height: 30px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
+  padding: 10px;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.chat-page {
+  @include full-bk('/assets/chat-bk.svg');
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.chat-box {
+  width: 80%;
+  height: 80%;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  align-items: stretch;
+  border: 1px solid;
+  border-color: #979797;
 }

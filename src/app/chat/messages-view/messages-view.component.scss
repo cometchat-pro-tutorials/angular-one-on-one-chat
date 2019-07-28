@@ -1,0 +1,138 @@
+:host {
+  width: 100%;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  height: 100%;
+}
+
+.user-info {
+  font-family: Helvetica;
+  font-size: 15px;
+  color: #2d313f;
+  letter-spacing: 0;
+  display: flex;
+  align-items: center;
+  flex: 0 0 48px;
+  padding-left: 20px;
+  border-left: 1px solid #d8d8d8;
+  border-bottom: 1px solid #d8d8d8;
+}
+
+.no-messages {
+  background: #f8f9fb;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-family: Helvetica;
+  font-size: 26px;
+  color: #1b47db;
+  letter-spacing: 0;
+  text-align: center;
+}
+
+.info {
+  opacity: 0.8;
+  font-family: Helvetica;
+  font-size: 16px;
+  color: #2d313f;
+  letter-spacing: 0;
+  text-align: center;
+  line-height: 22px;
+}
+
+.input-container {
+  display: flex;
+
+  input {
+    height: 62px;
+    flex: 1;
+    font-size: 21px;
+    background: white url(/assets/type-icon.svg) 98% no-repeat;
+  }
+}
+
+ul {
+  padding: 0 1em;
+  margin: 0;
+}
+
+.messages-container {
+  overflow: auto;
+}
+
+li {
+  display: flex;
+  list-style-type: none;
+  padding: 10px 0;
+  background-color: white;
+}
+
+.speech-bubble {
+  padding: 1em;
+  max-width: 50%;
+  word-wrap: break-word;
+  position: relative;
+  border-radius: 0.4em;
+  min-height: 30px;
+  margin-left: 20px;
+
+  background: #f7f8fa;
+  box-shadow: 0 1px 2px 0 #bdccd7;
+  opacity: 0.8;
+  font-family: Roboto-Regular;
+  font-size: 13px;
+  color: #2d313f;
+  letter-spacing: 0;
+  line-height: 21px;
+}
+
+.speech-bubble:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-right-color: #f7f8fa;
+  border-left: 0;
+  margin-top: -10px;
+  margin-left: -10px;
+}
+
+.speech-bubble-own {
+  padding: 1em;
+  position: relative;
+  min-height: 30px;
+  margin-right: 20px;
+  max-width: 50%;
+  word-wrap: break-word;
+
+  border-radius: 0.4em;
+  background: #1b47db;
+  font-family: Roboto-Regular;
+  font-size: 14px;
+  color: #ffffff;
+  letter-spacing: 0;
+  line-height: 19px;
+}
+
+.speech-bubble-own:after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-left-color: #1b47db;
+  border-right: 0;
+  margin-top: -10px;
+  margin-right: -10px;
+}

@@ -1,1 +1,28 @@
-<p>messages-view works!</p>
+<ng-template #noMessages>
+  <div class="no-messages">
+    <img src="/assets/no-messages-illustration.svg" />
+    <span class="title">No new message?</span>
+    <span class="info">Send your first message below.</span>
+  </div>
+</ng-template>
+
+<div class="main">
+  <div class="user-info">{{ user.fullName }}</div>
+  <div *ngIf="messages; else noMessages" class="messages-container">
+    <ul>
+      <li
+        *ngFor="let message of messages"
+        [style.flex-direction]="message.isOwn ? 'row-reverse' : 'row'"
+      >
+        <img src="/assets/profile-man.svg" />
+        <span
+          [ngClass]="message.isOwn ? 'speech-bubble-own' : 'speech-bubble'"
+          >{{ message.text }}</span
+        >
+      </li>
+    </ul>
+  </div>
+  <div class="input-container">
+    <input placeholder="Type something" />
+  </div>
+</div>

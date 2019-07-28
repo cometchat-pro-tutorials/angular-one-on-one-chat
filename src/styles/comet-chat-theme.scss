@@ -1,0 +1,54 @@
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+$md-ccpalette: (
+  50: #e4e9fb,
+  100: #bbc8f4,
+  200: #8da3ed,
+  300: #5f7ee6,
+  400: #3d63e0,
+  500: #1b47db,
+  600: #1840d7,
+  700: #1437d2,
+  800: #102fcd,
+  900: #0820c4,
+  A100: #eef0ff,
+  A200: #bbc1ff,
+  A400: #8893ff,
+  A700: #6e7cff,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000
+  )
+);
+
+$cometchat-app-primary: mat-palette($md-ccpalette);
+$cometchat-app-accent: mat-palette($mat-pink, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$cometchat-app-warn: mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$cometchat-app-theme: mat-light-theme(
+  $cometchat-app-primary,
+  $cometchat-app-accent,
+  $cometchat-app-warn
+);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($cometchat-app-theme);

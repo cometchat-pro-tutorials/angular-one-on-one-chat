@@ -1,4 +1,38 @@
+@import '../../styles/variables.scss';
+
 form {
   display: flex;
   flex-direction: column;
+}
+
+input {
+  background: url('/assets/email-icon.svg') no-repeat scroll 100% 50%;
+}
+
+h1 {
+  padding-left: 10px;
+  margin: 0;
+}
+
+img {
+  margin: 20px;
+}
+
+button {
+  margin-top: 20px;
+}
+
+span,
+a {
+  font-family: Roboto-Regular;
+  font-size: 16px;
+  color: $font-color;
+  letter-spacing: 0;
+}
+
+.login-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  min-width: 300px;
 }
