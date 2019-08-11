@@ -4,8 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { ChatComponent } from './chat/chat.component';
-// import { ContactsListComponent } from './chat/contacts-list/contacts-list.component';
-import { MessagesViewComponent } from './chat/messages-view/messages-view.component';
+import { ChatGuard } from './chat/chat.guard';
 
 const routes: Routes = [
   {
@@ -23,16 +22,12 @@ const routes: Routes = [
   },
   {
     path: 'chat',
-    component: ChatComponent
+    component: ChatComponent,
+    canActivate: [ChatGuard]
   },
   {
     path: '**',
     redirectTo: 'chat'
-  },
-  // for debgu
-  {
-    path: 'messages',
-    component: MessagesViewComponent
   }
 ];
 

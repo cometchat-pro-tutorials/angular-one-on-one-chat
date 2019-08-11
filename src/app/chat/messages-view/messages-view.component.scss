@@ -26,6 +26,8 @@
   background: #f8f9fb;
   display: flex;
   flex-direction: column;
+  flex-grow: 2;
+  justify-content: center;
 }
 
 .title {

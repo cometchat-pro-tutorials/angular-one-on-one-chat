@@ -3,11 +3,21 @@
     <img src="assets/chat-logo.svg" />
     <span>Chat</span>
   </div>
-  <img src="assets/profile-man.svg" />
+  <div *ngIf="authService.currentUser" class="user-profile">
+    <span>
+      Welcome, <b> {{ authService.currentUser.name }}</b>
+    </span>
+    <img [src]="authService.currentUser.avatar" width="36px" height="37px" />
+  </div>
 </div>
 <div class="chat-page">
   <div class="chat-box">
-    <app-contacts-list></app-contacts-list>
-    <app-messages-view></app-messages-view>
+    <app-contacts-list
+      (userSelected)="onUserSelected($event)"
+    ></app-contacts-list>
+    <app-messages-view
+      [messages]="visibleMessages"
+      (sendMessage)="onSendMessage($event)"
+    ></app-messages-view>
   </div>
 </div>

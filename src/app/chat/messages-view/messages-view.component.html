@@ -7,7 +7,7 @@
 </ng-template>
 
 <div class="main">
-  <div class="user-info">{{ user.fullName }}</div>
+  <div class="user-info">{{ authService?.currentUser.name }}</div>
   <div *ngIf="messages; else noMessages" class="messages-container">
     <ul>
       <li
@@ -23,6 +23,12 @@
     </ul>
   </div>
   <div class="input-container">
-    <input placeholder="Type something" />
+    <input
+      placeholder="Type something"
+      #messageInput
+      (keydown.enter)="
+        onSendMessage(messageInput.value); messageInpu.value = ''
+      "
+    />
   </div>
 </div>

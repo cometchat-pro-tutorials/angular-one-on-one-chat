@@ -2,11 +2,11 @@
   <div class="login-box">
     <div class="login-content">
       <h1>Welcome Back</h1>
-      <form (ngSubmit)="login()">
+      <form (ngSubmit)="login(userId.value)">
         <mat-form-field>
-          <input matInput placeholder="Email" type="email" />
-          <mat-error *ngIf="false">
-            Please enter a valid email address
+          <input matInput placeholder="User ID" type="email" #userId />
+          <mat-error *ngIf="error">
+            {{ error }}
           </mat-error>
         </mat-form-field>
         <button mat-raised-button color="primary">LOG IN</button>

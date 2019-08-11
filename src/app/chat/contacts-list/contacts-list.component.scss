@@ -24,6 +24,10 @@ li {
   &:active {
     background-color: #1b47db;
   }
+
+  &.active {
+    background-color: #1b47db;
+  }
 }
 
 .image-container {
@@ -35,10 +39,16 @@ li {
   bottom: 0;
   left: 25px;
 
-  &:before {
+  &.on:before {
     content: ' \25CF';
     font-size: 20px;
     color: #1bdb72;
+  }
+
+  &.off:before {
+    content: ' \25CF';
+    font-size: 20px;
+    color: #bbbebe;
   }
 }
 

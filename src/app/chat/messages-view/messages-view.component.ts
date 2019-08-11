@@ -1,119 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { AuthService } from 'src/app/core/auth.service';
+import { CometChat } from '@cometchat-pro/chat';
 
 @Component({
   selector: 'app-messages-view',
   templateUrl: './messages-view.component.html',
   styleUrls: ['./messages-view.component.scss']
 })
-export class MessagesViewComponent implements OnInit {
-  user = {
-    fullName: 'Adrian Faciu'
-  };
+export class MessagesViewComponent {
+  @Input() messages: CometChat.TextMessage[] | null;
+  @Output() sendMessage = new EventEmitter<string>();
 
-  messages = [
-    {
-      text:
-        'bla bla bla as er asd asd qwer asd bla bla bla as er asd asd qwer asd bla bla bla as er asd asd qwer asd',
-      isOwn: false
-    },
-    {
-      text:
-        'bla bla bla as er asd asd qwer asd bla bla bla as er asd asd qwer asd bla bla bla as er asd asd qwer asd',
-      isOwn: false
-    },
-    {
-      text:
-        'bla bla bla as er asd asd qwer asd bla bla bla as er asd asd qwer asd bla bla bla as er asd asd qwer asd',
-      isOwn: true
-    },
-    {
-      text:
-        'bla bla bla as er asd asd qwer asd bla bla bla as er asd asd qwer asd bla bla bla as er asd asd qwer asd',
-      isOwn: false
-    },
-    {
-      text:
-        'bla bla bla as er asd asd qwer asd bla bla bla as er asd asd qwer asd bla bla bla as er asd asd qwer asd',
-      isOwn: true
-    },
-    {
-      text:
-        'bla bla bla as er asd asd qwer asd bla bla bla as er asd asd qwer asd bla bla bla as er asd asd qwer asd',
-      isOwn: false
-    },
-    {
-      text:
-        'bla bla bla as er asd asd qwer asd bla bla bla as er asd asd qwer asd bla bla bla as er asd asd qwer asd',
-      isOwn: true
-    },
-    {
-      text:
-        'bla bla bla as er asd asd qwer asd bla bla bla as er asd asd qwer asd bla bla bla as er asd asd qwer asd',
-      isOwn: false
-    },
-    {
-      text:
-        'bla bla bla as er asd asd qwer asd bla bla bla as er asd asd qwer asd bla bla bla as er asd asd qwer asd',
-      isOwn: false
-    },
-    {
-      text:
-        'bla bla bla as er asd asd qwer asd bla bla bla as er asd asd qwer asd bla bla bla as er asd asd qwer asd',
-      isOwn: true
-    },
-    {
-      text:
-        'bla bla bla as er asd asd qwer asd bla bla bla as er asd asd qwer asd bla bla bla as er asd asd qwer asd',
-      isOwn: false
-    },
-    {
-      text:
-        'bla bla bla as er asd asd qwer asd bla bla bla as er asd asd qwer asd bla bla bla as er asd asd qwer asd',
-      isOwn: false
-    },
-    {
-      text:
-        'bla bla bla as er asd asd qwer asd bla bla bla as er asd asd qwer asd bla bla bla as er asd asd qwer asd',
-      isOwn: true
-    },
-    {
-      text:
-        'bla bla bla as er asd asd qwer asd bla bla bla as er asd asd qwer asd bla bla bla as er asd asd qwer asd',
-      isOwn: false
-    },
-    {
-      text:
-        'bla bla bla as er asd asd qwer asd bla bla bla as er asd asd qwer asd bla bla bla as er asd asd qwer asd',
-      isOwn: false
-    },
-    {
-      text:
-        'bla bla bla as er asd asd qwer asd bla bla bla as er asd asd qwer asd bla bla bla as er asd asd qwer asd',
-      isOwn: true
-    },
-    {
-      text:
-        'bla bla bla as er asd asd qwer asd bla bla bla as er asd asd qwer asd bla bla bla as er asd asd qwer asd',
-      isOwn: false
-    },
-    {
-      text:
-        'bla bla bla as er asd asd qwer asd bla bla bla as er asd asd qwer asd bla bla bla as er asd asd qwer asd',
-      isOwn: false
-    },
-    {
-      text:
-        'bla bla bla as er asd asd qwer asd bla bla bla as er asd asd qwer asd bla bla bla as er asd asd qwer asd',
-      isOwn: true
-    },
-    {
-      text:
-        'bla bla bla as er asd asd qwer asd bla bla bla as er asd asd qwer asd bla bla bla as er asd asd qwer asd',
-      isOwn: false
-    }
-  ];
+  constructor(readonly authService: AuthService) {}
 
-  constructor() {}
-
-  ngOnInit() {}
+  onSendMessage(message: string) {
+    this.sendMessage.emit(message);
+  }
 }

@@ -5,7 +5,7 @@
   align-items: center;
 }
 
-span {
+.logo span {
   margin-left: 10px;
   font-family: AbrilFatface-Regular;
   font-size: 22px;
@@ -41,4 +41,9 @@ span {
   align-items: stretch;
   border: 1px solid;
   border-color: #979797;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
 }
