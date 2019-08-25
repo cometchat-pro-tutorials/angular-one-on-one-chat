@@ -8,15 +8,28 @@
 
 <div class="main">
   <div class="user-info">{{ authService?.currentUser.name }}</div>
-  <div *ngIf="messages; else noMessages" class="messages-container">
+  <div
+    *ngIf="messages && messages[0]; else noMessages"
+    class="messages-container"
+    #scrollMe
+    [scrollTop]="scrollMe.scrollHeight"
+  >
     <ul>
       <li
         *ngFor="let message of messages"
-        [style.flex-direction]="message.isOwn ? 'row-reverse' : 'row'"
+        [style.flex-direction]="
+          message.sender.uid === authService.currentUser.uid
+            ? 'row-reverse'
+            : 'row'
+        "
       >
-        <img src="/assets/profile-man.svg" />
+        <img [src]="message.sender.avatar" width="36px" height="37px" />
         <span
-          [ngClass]="message.isOwn ? 'speech-bubble-own' : 'speech-bubble'"
+          [ngClass]="
+            message.sender.uid === authService.currentUser.uid
+              ? 'speech-bubble-own'
+              : 'speech-bubble'
+          "
           >{{ message.text }}</span
         >
       </li>
@@ -27,7 +40,7 @@
       placeholder="Type something"
       #messageInput
       (keydown.enter)="
-        onSendMessage(messageInput.value); messageInpu.value = ''
+        onSendMessage(messageInput.value); messageInput.value = ''
       "
     />
   </div>

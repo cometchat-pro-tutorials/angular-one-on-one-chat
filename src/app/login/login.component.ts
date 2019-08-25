@@ -14,15 +14,11 @@ export class LoginComponent {
   constructor(readonly router: Router, readonly auth: AuthService) {}
 
   login(userId: string) {
-    let action = Promise.resolve();
-
-    if (!this.auth.isDemo) {
-      action = this.auth.login(userId);
-    }
-
-    action.then(
-      () => this.router.navigateByUrl('/chat'),
-      err => (this.error = err)
-    );
+    this.auth
+      .login(userId)
+      .then(
+        () => this.router.navigateByUrl('/chat'),
+        err => (this.error = err)
+      );
   }
 }

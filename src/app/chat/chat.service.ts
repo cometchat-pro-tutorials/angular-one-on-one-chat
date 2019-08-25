@@ -29,7 +29,7 @@ export class ChatService {
     );
   }
 
-  removeListener(listenerId: string) {
+  removeMessageListener(listenerId: string) {
     CometChat.removeMessageListener(listenerId);
   }
 

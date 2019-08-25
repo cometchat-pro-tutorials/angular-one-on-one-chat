@@ -12,12 +12,8 @@ const listenerId = 'ChatScreenListener';
   styleUrls: ['./chat.component.scss']
 })
 export class ChatComponent implements OnInit, OnDestroy {
-  visibleMessages: CometChat.TextMessage[] | null = null;
   selectedUser: CometChat.UserObj;
-
-  // Cache for all users messages
-  // Move all functionality to service...
-  messages = new Map<string, CometChat.TextMessage[]>();
+  messages: CometChat.TextMessage[] | null = null;
 
   constructor(
     readonly authService: AuthService,
@@ -25,30 +21,35 @@ export class ChatComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit() {
-    this.chatService.listenForMessages(listenerId, msg =>
-      console.log(`Message received: ${msg}`)
-    );
+    this.chatService.listenForMessages(listenerId, msg => {
+      console.log('New message: ', msg);
+      this.messages = [...this.messages, msg];
+    });
   }
 
   ngOnDestroy() {
-    this.chatService.removeListener(listenerId);
+    this.chatService.removeMessageListener(listenerId);
   }
 
-  onUserSelected(usr: CometChat.UserObj) {
+  async onUserSelected(usr: CometChat.UserObj) {
     this.selectedUser = usr;
-    this.chatService.getPreviousMessages(usr.uid);
+    const messages = await this.chatService.getPreviousMessages(usr.uid);
+    console.log('Previous messages', messages);
+
+    this.messages = (messages as any[]).filter(msg => msg.type === 'text');
   }
 
-  onSendMessage(message: string) {
-    this.chatService.sendMessage(this.selectedUser.uid, message);
-
-    // Only on success
-    const newMessage = new CometChat.TextMessage(
+  async onSendMessage(message: string) {
+    console.log('sending message: ', message);
+    const sentMessage = await this.chatService.sendMessage(
       this.selectedUser.uid,
-      message,
-      'type',
-      'user'
+      message
     );
-    this.visibleMessages = [...this.visibleMessages, newMessage];
+
+    console.log({ sentMessage });
+
+    if (sentMessage) {
+      this.messages = [...this.messages, sentMessage as any];
+    }
   }
 }

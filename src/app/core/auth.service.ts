@@ -14,7 +14,7 @@ export class AuthService {
 
   private apiKey: string | null;
 
-  currentUser: CometChat.UserObj;
+  currentUser: unknown; // CometChat.UserObj;
 
   constructor(private snackBar: MatSnackBar) {
     const [appId, apiKey] = this.fetchAppIdAndApiKey();

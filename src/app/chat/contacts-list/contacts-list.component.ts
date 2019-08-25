@@ -23,9 +23,20 @@ export class ContactsListComponent implements OnInit, OnDestroy {
 
   constructor(readonly contactsService: ContactsService) {}
 
-  ngOnInit() {
-    this.contactsService.getContacts();
-    this.contactsService.trackOnlineStatus(listenerId);
+  async ngOnInit() {
+    await this.contactsService.getContacts();
+    await this.contactsService.trackOnlineStatus(listenerId);
+
+    this.selectFirstContact();
+  }
+
+  private selectFirstContact() {
+    if (
+      this.contactsService.contacts &&
+      this.contactsService.contacts.length !== 0
+    ) {
+      this.onUserSelected(this.contactsService.contacts[0] as any);
+    }
   }
 
   ngOnDestroy(): void {
@@ -33,8 +44,6 @@ export class ContactsListComponent implements OnInit, OnDestroy {
   }
 
   onUserSelected(user: CometChat.User) {
-    console.log(`Selected ${user}`);
-
     this.activeUser = user;
     this.userSelected.emit(user);
   }

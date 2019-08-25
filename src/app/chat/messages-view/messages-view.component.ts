@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { Component, Output, EventEmitter, Input } from '@angular/core';
 import { AuthService } from 'src/app/core/auth.service';
 import { CometChat } from '@cometchat-pro/chat';
 

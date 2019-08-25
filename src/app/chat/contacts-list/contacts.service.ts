@@ -16,7 +16,7 @@ export class ContactsService {
       .setLimit(USERS_TO_FETCH)
       .build();
 
-    usersRequest.fetchNext().then(users => {
+    return usersRequest.fetchNext().then(users => {
       if (users instanceof Array) {
         console.log(users);
         // tslint:disable-next-line: no-angle-bracket-type-assertion
@@ -35,7 +35,7 @@ export class ContactsService {
     });
 
     // tslint:disable-next-line: no-angle-bracket-type-assertion
-    CometChat.addUserListener(listenerId, <any>userListener);
+    return CometChat.addUserListener(listenerId, <any>userListener);
   }
 
   destroy(listenerId: string) {
