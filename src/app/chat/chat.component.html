@@ -17,6 +17,7 @@
     ></app-contacts-list>
     <app-messages-view
       [messages]="messages"
+      [selectedUserName]="selectedUser?.name"
       (sendMessage)="onSendMessage($event)"
     ></app-messages-view>
   </div>

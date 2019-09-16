@@ -2,38 +2,23 @@ import { Injectable } from '@angular/core';
 import { CometChat } from '@cometchat-pro/chat';
 import { MatSnackBar } from '@angular/material';
 
-const localStorageKey = 'appIdAndApiKey';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  get isDemo() {
-    return !this.apiKey;
-  }
-
-  private apiKey: string | null;
-
-  currentUser: unknown; // CometChat.UserObj;
+  currentUser: unknown;
 
   constructor(private snackBar: MatSnackBar) {
-    const [appId, apiKey] = this.fetchAppIdAndApiKey();
-
-    if (appId && apiKey) {
-      this.init(appId, apiKey);
-    }
+    this.init(environment.appId);
   }
 
-  init(appId: string, apiKey: string) {
+  init(appId: string) {
     CometChat.init(appId).then(
-      msg => {
-        console.log('Initialized succesfull: ', msg);
-        localStorage.setItem(localStorageKey, appId + ':' + apiKey);
-        this.apiKey = apiKey;
-      },
+      msg => console.log('Initialized succesfull: ', msg),
       err => {
         console.log('App init failed', err);
-        this.apiKey = null;
         this.snackBar.open(
           'App initialization failed. Please refresh the page.'
         );
@@ -45,15 +30,5 @@ export class AuthService {
     return CometChat.login(userId)
       .then(usr => (this.currentUser = usr), (this.currentUser = null))
       .then(_ => console.log('User logged in'), console.error);
-  }
-
-  private fetchAppIdAndApiKey() {
-    let appIdAndApiKey = localStorage.getItem(localStorageKey);
-
-    if (!appIdAndApiKey) {
-      appIdAndApiKey = prompt('Enter app id and api key (appId:appKey)', '');
-    }
-
-    return appIdAndApiKey.split(':');
   }
 }

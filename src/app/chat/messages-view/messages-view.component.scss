@@ -56,6 +56,17 @@
     flex: 1;
     font-size: 21px;
     background: white url(/assets/type-icon.svg) 98% no-repeat;
+
+    width: 100%;
+    border: none;
+    outline: none;
+    resize: none;
+    border-radius: 0 0 6px 0;
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+    font-size: 16px;
+    color: #333;
+    padding: 20px;
   }
 }
 

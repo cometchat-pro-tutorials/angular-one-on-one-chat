@@ -9,6 +9,8 @@ import { CometChat } from '@cometchat-pro/chat';
 })
 export class MessagesViewComponent {
   @Input() messages: CometChat.TextMessage[] | null;
+  @Input() selectedUserName: string;
+
   @Output() sendMessage = new EventEmitter<string>();
 
   constructor(readonly authService: AuthService) {}
