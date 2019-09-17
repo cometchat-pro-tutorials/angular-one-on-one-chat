@@ -3,7 +3,7 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  border: 1px solid #d8d8d8;
+  border-right: 1px solid #d8d8d8;
 }
 
 img {
@@ -16,6 +16,7 @@ li {
 
   display: flex;
   border: 1px solid #f7f8fa;
+  border-right: none;
 
   &:hover {
     background-color: #ecf0fe;
@@ -56,7 +57,7 @@ ul {
   padding: 0;
   margin: 0;
   overflow: auto;
-  border: 1px solid #d8d8d8;
+  border-top: 1px solid #d8d8d8;
 }
 
 .contacts-title {
