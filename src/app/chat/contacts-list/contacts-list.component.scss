@@ -3,7 +3,7 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  border-right: 1px solid #d8d8d8;
+  border-right: 1px solid #BDCCD7;
 }
 
 img {
@@ -15,19 +15,19 @@ li {
   padding: 10px 15px;
 
   display: flex;
-  border: 1px solid #f7f8fa;
-  border-right: none;
+  border-bottom: 1px solid rgba(189, 204, 215, 0.5);
+  cursor: pointer;
 
   &:hover {
     background-color: #ecf0fe;
   }
 
-  &:active {
-    background-color: #1b47db;
-  }
-
+  &:active,
   &.active {
     background-color: #1b47db;
+    .status-title {
+      color: #FFFFFE;
+    }
   }
 }
 
@@ -67,7 +67,7 @@ ul {
   letter-spacing: 0;
   display: flex;
   align-items: center;
-  flex: 0 0 48px;
+  flex: 0 0 61px;
   margin-left: 20px;
 }
 
@@ -92,3 +92,35 @@ ul {
   color: #2d313f;
   letter-spacing: 0;
 }
+
+@media (max-width: 635px) {
+  .header {
+    padding: 20px 0;
+    text-align: center;
+  }
+  .main {
+    min-width: 90px;
+  }
+  li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .contacts-title {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .contacts-info {
+    display: none;
+  }
+  .image-container {
+    left: -3px;
+  }
+  .contact-item {
+    justify-content: center;
+    padding: 0;
+  }
+}
+

@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 10px;
+  padding: 10px 20px;
   background-color: white;
   position: fixed;
   top: 0;
@@ -38,6 +38,7 @@
   justify-content: center;
   align-items: center;
   height: 100%;
+  padding-top: 70px;
 }
 
 .chat-box {
@@ -50,5 +51,11 @@
   max-width: 800px;
   width: calc(100% - 20px);
   height: 500px;
-  min-height: 500px;
+  max-height: calc(100% - 20px)
+}
+
+@media (max-width: 450px) {
+  .user-profile span {
+    display: none;
+  }
 }
