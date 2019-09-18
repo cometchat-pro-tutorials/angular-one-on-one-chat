@@ -4,12 +4,12 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 10px 20px;
+  padding: 6.5px 20px;
   background-color: white;
-  position: fixed;
   top: 0;
   width: 100%;
   font-family: 'Roboto', sans-serif;
+  position: fixed;
 }
 
 .logo {
@@ -36,9 +36,8 @@
   @include full-bk('/assets/chat-bk.svg');
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   height: 100%;
-  padding-top: 70px;
 }
 
 .chat-box {
@@ -47,7 +46,7 @@
   background: #fffffe;
   box-shadow: 0px 2px 36px rgba(45, 49, 63, 0.357436);
   border-radius: 6px;
-  margin: 50px auto 50px;
+  margin: 100px auto 50px;
   max-width: 800px;
   width: calc(100% - 20px);
   height: 500px;
