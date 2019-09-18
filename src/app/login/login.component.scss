@@ -5,10 +5,6 @@ form {
   flex-direction: column;
 }
 
-input {
-  background: url('/assets/email-icon.svg') no-repeat scroll 100% 50%;
-}
-
 h1 {
   padding-left: 10px;
   margin: 0;
@@ -28,11 +24,28 @@ a {
   font-size: 16px;
   color: $font-color;
   letter-spacing: 0;
+  margin-left: 5px;
+}
+
+a {
+  color: #1B47DB;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 .login-content {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  min-width: 300px;
+  flex: 1;
+}
+
+@media (max-width: 710px) {
+  img {
+    display: none;
+  }
+
+  h1 {
+    padding: 0;
+  }
 }

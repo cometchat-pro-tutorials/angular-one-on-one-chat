@@ -5,6 +5,13 @@
 
 @import url('https://fonts.googleapis.com/css?family=Abril+Fatface|Roboto&display=swap');
 
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
 html,
 body {
   height: 100%;
@@ -37,4 +44,13 @@ h1 {
   box-shadow: 0 2px 38px 0 rgba(45, 49, 63, 0.4);
   display: flex;
   padding: 40px;
+  max-width: 680px;
+  width: calc(100% - 20px);
+  min-height: 300px;
+}
+
+@media (max-width: 710px) {
+  .login-box {
+    padding: 30px;
+  }
 }
