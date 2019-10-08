@@ -23,7 +23,7 @@ To run the demo follow these steps:
 - From the dashboard, create a new app called "angular-chat"
 - Once created, click the button Explore
 - Copy the APP id that was generated with the new app, we'll use this later
-- Download the repository [here](https://github.com/cometchat-pro-samples/Angular-group-chat.git) or by running `git clone https://github.com/cometchat-pro-samples/Angular-group-chat.git`
+- Download the repository [here](https://github.com/cometchat-pro-tutorials/angular-one-on-one-chat.git) or by running `git clone https://github.com/cometchat-pro-tutorials/angular-one-on-one-chat.git`
 - Install all dependencies by running `npm install` in the project folder
 - Go to `src/environments/environment.ts` file and paste the APP id
 - Start the application by running `npm start` in the aplication folder
@@ -31,10 +31,10 @@ To run the demo follow these steps:
 
 ## Useful links
 
-- [📚Tutorial showing how we built this sample](www.google.com)
-- [ℹ️CometChat homepage](https://www.cometchat.com/pro/)
-- [ℹ️CometChat Javascript documentation](https://developer.cometchat.com/docs/web-quick-start)
+- [📚Tutorial showing how we built this sample](https://www.cometchat.com/tutorials/angular-chat-one-on-one/)
+- [ℹ️ CometChat homepage](https://www.cometchat.com/pro/)
+- [ℹ️ CometChat Javascript documentation](https://developer.cometchat.com/docs/web-quick-start)
 
 ## Other examples
 
-- [Complete app](https://github.com/cometchat-pro-samples/Angular-group-chat.git)
+- [Complete app](https://github.com/cometchat-pro-tutorials/angular-one-on-one-chat.git)
